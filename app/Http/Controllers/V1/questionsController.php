@@ -4,10 +4,10 @@ namespace App\Http\Controllers\V1;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Services\UserTypeService;
+use App\Services\questionsService;
 use App\Http\Controllers\Controller;
 
-class UserTypeController extends Controller {
+class questionsController extends Controller {
 
     private $service;
 
@@ -15,7 +15,7 @@ class UserTypeController extends Controller {
      * 
      * @param UserTypeService $Service
      */
-    public function __construct(\App\Services\UserTypeService $Service) {
+    public function __construct(questionsService $Service) {
         $this->service = $Service;
     }
 
@@ -49,7 +49,7 @@ class UserTypeController extends Controller {
      * @param Request $request
      * @return array
      */
-    public function create(Request $request): array {
+    public function create(Request $request) {
         try {
             return response()->json($this->service->create($request->all()), Response::HTTP_CREATED);
         } catch (\Exception $e) {

@@ -9,7 +9,8 @@
         "darkaonline/swagger-lume": "5.6.*",
         "guzzlehttp/guzzle": "^7.0",
         "laravel/lumen-framework": "^7.0",
-        "lcobucci/jwt": "^3.4"
+        "lcobucci/jwt": "^3.4",
+        "orumad/lumen-config-cache": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.9.1",
@@ -33,7 +34,11 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "platform-check": false,
+        "platform": {
+            "php": "7.1.0"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

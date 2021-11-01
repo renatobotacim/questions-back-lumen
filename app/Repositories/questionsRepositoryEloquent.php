@@ -2,13 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Models\UserTypes;
+use App\Models\questions;
 
-class UserTypeRepositoryEloquent implements UserTypeRepositoryInterface {
+class questionsRepositoryEloquent implements questionsRepositoryInterface {
 
     private $model;
 
-    public function __construct(UserTypes $data) {
+    public function __construct(questions $data) {
         $this->model = $data;
     }
 

@@ -5,14 +5,14 @@ namespace App\Services;
 use Illuminate\Support\Facades\Validator;
 use App\Exceptions\CustomValidationException;
 //use Illuminate\Support\Facades\DB;
-use App\Models\UserTypes;
-use App\Repositories\UserTypeRepositoryInterface;
+use App\Models\dimensions;
+use App\Repositories\dimensionsRepositoryInterface;
 
-class UserTypeService {
+class dimensionsService {
 
     private $repository;
 
-    public function __construct(UserTypeRepositoryInterface $Repository) {
+    public function __construct(dimensionsRepositoryInterface $Repository) {
         $this->repository = $Repository;
     }
 
@@ -33,7 +33,6 @@ class UserTypeService {
         return $this->repository->get($id);
     }
 
-
     /**
      * method created to register records
      * @param array $data
@@ -41,10 +40,10 @@ class UserTypeService {
      * @throws CustomValidationException
      */
     public function create(array $data) {
-        $validator = Validator::make($data, UserTypes::RULE_TYPE_USER);
-        if ($validator->fails()) {
-            throw new CustomValidationException('Falha na validação dos dados', $validator->errors());
-        }
+//        $validator = Validator::make($data, dimensions::RULE_DIMENSIONS);
+//        if ($validator->fails()) {
+//            throw new CustomValidationException('Falha na validação dos dados', $validator->errors());
+//        }
         return $this->repository->create($data);
     }
 
@@ -56,7 +55,7 @@ class UserTypeService {
      * @throws CustomValidationException
      */
     public function update(int $id, array $data) {
-        $validator = Validator::make($data, UserTypes::RULE_TYPE_USER);
+        $validator = Validator::make($data, dimensions::RULE_DIMENSIONS);
         if ($validator->fails()) {
             throw new CustomValidationException('Falha na validação dos dados', $validator->errors());
         }

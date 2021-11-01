@@ -9,46 +9,46 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @author Renato
  */
-class UserTypes extends Model {
+class questions extends Model {
 
     /**
      * Bank table for this model
      * @var string
      */
-    protected $table = 'inf_tipos_usuarios';
+    protected $table = 'questions';
 
     /**
      * Primary key
      * @var string
      */
-    protected $primaryKey = 'tipo_usuario_id';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
      * @var array
      */
     protected $fillable = [
-        'tipo_usuario_id',
-        'tipo_usuario_nome',
-        'tipo_usuario_envia',
-        'tipo_usuario_recebe'
+        'id',
+        'dimension_id',
+        'question',
+        'status',
+        'deleted'
     ];
 
     /**
      * Disable timestamps
      * @var bool
      */
-    public $timestamps = false;
+    public $timestamps = true;
 
-    
     /**
      * Validation Rules for Table Fields
      * @var array
      */
-    const RULE_TYPE_USER = [
-        'tipo_usuario_nome' => 'required|max:45',
-        'tipo_usuario_envia' => 'required|boolean',
-        'tipo_usuario_recebe' => 'required|boolean'
+    const RULE_QUESTIONS = [
+        'dimension_id' => 'required',
+        'question' => 'required|max:45',
+        'status' => 'required|boolean',
     ];
 
 }

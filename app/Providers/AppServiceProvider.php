@@ -15,12 +15,12 @@ class AppServiceProvider extends ServiceProvider {
 
         /**
          * comando para registrar o provaider para quando for habilitar autencicação via jwt
+         * 
+         * $this->app->register(\Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+         * 
          */
-        //     $this->app->register(\Tymon\JWTAuth\Providers\LumenServiceProvider::class);
-
-        $this->app->bind('App\Repositories\UserTypeRepositoryInterface', 'App\Repositories\UserTypeRepositoryEloquent');
-        $this->app->bind('App\Repositories\TransactionsRepositoryInterface', 'App\Repositories\TransactionsRepositoryEloquent');
-        $this->app->bind('App\Repositories\UserRepositoryInterface', 'App\Repositories\UserRepositoryEloquent');
+        $this->app->bind('App\Repositories\questionsRepositoryInterface', 'App\Repositories\questionsRepositoryEloquent');
+        $this->app->bind('App\Repositories\dimensionsRepositoryInterface', 'App\Repositories\dimensionsRepositoryEloquent');
     }
 
 }

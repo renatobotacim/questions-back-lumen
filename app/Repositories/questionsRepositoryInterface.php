@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\UserTypes;
+use App\Models\questions;
 
-interface UserTypeRepositoryInterface {
+interface questionsRepositoryInterface {
 
-    public function __construct(UserTypes $data);
+    public function __construct(questions $data);
 
     public function getAll();
 
