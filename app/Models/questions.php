@@ -47,7 +47,7 @@ class questions extends Model {
      */
     const RULE_QUESTIONS = [
         'dimension_id' => 'required',
-        'question' => 'required|max:45',
+        'question' => 'required|max:255',
         'status' => 'required|boolean',
     ];
 

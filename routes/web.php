@@ -31,12 +31,3 @@ $router->group(['prefix' => "/api/v1/dimensions", 'namespace' => 'V1'], function
     $router->put("/{id}", "dimensionsController@update");
     $router->delete("/{id}", "dimensionsController@delete");
 });
-
-
-//$router->group(['prefix' => "/api/v1/transacticion", 'namespace' => 'V1'], function () use ($router) {
-//    $router->post("", "TransactionsController@create");
-////    $router->get("", "TransactionsController@getAll");
-////    $router->get("/{id}", "TransactionsController@get");
-////    $router->put("/{id}", "TransactionsController@update");
-////    $router->delete("/{id}", "TransactionsController@delete");
-//});

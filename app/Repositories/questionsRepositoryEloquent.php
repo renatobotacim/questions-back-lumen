@@ -13,7 +13,7 @@ class questionsRepositoryEloquent implements questionsRepositoryInterface {
     }
 
     public function getAll() {
-        return $this->model->all();
+        return $this->model->whereNull('deleted')->get();
     }
 
     public function get($id) {
